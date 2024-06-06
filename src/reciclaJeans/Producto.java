@@ -8,6 +8,7 @@ public class Producto {
 	private String talla;
 	private String marca;
 	private String color;
+	
 	public Producto(String articulo, String precio, String descripcion, String codigo, String talla, String marca,
 			String color) {
 		super();
