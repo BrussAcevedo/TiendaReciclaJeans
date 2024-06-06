@@ -30,42 +30,36 @@ public class ProductoServicio {
 
 		} else {
 			System.out.println("No Existen datos importados.");
-			
+
 		}
 
 	}
 
-	public void editarDatos() {	
-		
+	public void editarDatos() {
+
 		String codigoComparar = Integer.toString(Menu.atributoCompararMenu());
-		
+		boolean encontrado = false;
 		int respuestaDos = 0;
 		if (!listaProducto.isEmpty()) {
 			for (Producto producto : listaProducto) {
-System.out.println(producto.getCodigo());
+
 				if (producto.getCodigo().equals(codigoComparar)) {
 					respuestaDos = Menu.atributoCompararMenuDos(producto);
+					encontrado = true;
 					if (respuestaDos > 0 && respuestaDos < 8) {
 						editarSwitch(respuestaDos, producto);
 						mostrarDatosLista(producto);
 						System.out.println("Datos editados correctamente.");
 						Utilidad.delay2000();
-					
 
 					}
-
-				} else {
-					System.out.println("No se encuentra el codigo.");
-					
-					break;
 				}
 			}
-		} else {
-			System.out.println("No existen datos.");
+			if (encontrado == false) {
+				System.out.println("CodigoProducto no encontrado.");
+			}
 		}
-
 	}
-	
 
 	public static void opcionAEditar() {
 
@@ -109,7 +103,7 @@ System.out.println(producto.getCodigo());
 		case 2: {
 			nuevoDato = Menu.nuevoDatoEdit("Codigo");
 			producto.setCodigo(nuevoDato);
-			break;		
+			break;
 		}
 		case 3: {
 			nuevoDato = Menu.nuevoDatoEdit("Marca");

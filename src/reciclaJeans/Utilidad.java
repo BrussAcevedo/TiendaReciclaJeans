@@ -28,7 +28,7 @@ public class Utilidad {
 	            e.printStackTrace();
 	        }
 	        Instant end = Instant.now();
-	        System.out.println("Fin del delay: " + Duration.between(start, end).toMillis() + " milisegundos transcurridos.");
+	        System.out.println(Duration.between(start, end).toMillis() + " milisegundos transcurridos...");
 	
 	}
 	

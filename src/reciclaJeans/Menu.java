@@ -11,16 +11,18 @@ public class Menu {
 		Scanner scan = new Scanner(System.in);
 		String respuestaStr;
 	
-		
+		System.out.println("_____________________________________");
 		System.out.println("1 Listar Producto\r\n"
 				+ "2 Editar Datos\r\n"
 				+ "3 Importar Datos\r\n"
 				+ "4 Salir\r\n"
 				+ "Ingrese una opción:");
 		
+		System.out.println("_____________________________________");
 		respuestaStr = scan.nextLine();
+		
 		int respuesta = Utilidad.validarEntero(respuestaStr, "\\d+");
-
+		
 		return respuesta;
 	}
 
